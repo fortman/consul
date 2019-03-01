@@ -127,9 +127,7 @@ module ConsulCookbook
       attribute(:retry_max, kind_of: Integer)
       attribute(:rejoin_after_leave, equal_to: [true, false])
       attribute(:segment, kind_of: String)
-      attribute(:segments, kind_of: [Hash, Mash])
-      attribute(:serf_lan, kind_of: String)
-      attribute(:serf_wan, kind_of: String)
+      attribute(:segments, kind_of: Array)
       attribute(:serf_lan_bind, kind_of: String)
       attribute(:serf_wan_bind, kind_of: String)
       attribute(:server, equal_to: [true, false])
@@ -235,8 +233,6 @@ module ConsulCookbook
           retry_max
           segment
           segments
-          serf_lan
-          serf_wan
           serf_lan_bind
           serf_wan_bind
           server
