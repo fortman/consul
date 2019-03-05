@@ -3,7 +3,11 @@ maintainer 'Sous Chefs'
 maintainer_email 'help@sous-chefs.org'
 license 'Apache-2.0'
 description 'Application cookbook which installs and configures Consul.'
-version '3.3.1'
+long_description 'Application cookbook which installs and configures Consul.'
+version '3.1.1'
+
+recipe 'consul::default', 'Installs and configures the Consul service.'
+recipe 'consul::client_gem', 'Installs the Consul Ruby client as a gem.'
 
 supports 'centos', '>= 6.4'
 supports 'redhat', '>= 6.4'
