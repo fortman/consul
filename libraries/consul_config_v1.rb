@@ -85,6 +85,7 @@ module ConsulCookbook
       attribute(:enable_debug, equal_to: [true, false])
       attribute(:enable_local_script_checks, equal_to: [true, false])
       attribute(:enable_script_checks, equal_to: [true, false])
+      attribute(:enable_local_script_checks, equal_to: [true, false])
       attribute(:enable_syslog, equal_to: [true, false])
       attribute(:encrypt, kind_of: String)
       attribute(:encrypt_verify_incoming, equal_to: [true, false])
@@ -195,6 +196,7 @@ module ConsulCookbook
           enable_debug
           enable_local_script_checks
           enable_script_checks
+          enable_local_script_checks
           enable_syslog
           encrypt
           encrypt_verify_incoming
