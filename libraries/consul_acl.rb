@@ -91,10 +91,10 @@ module ConsulCookbook
 
       def up_to_date?
         retry_block(max_tries: 3, sleep: 0.5) do
-          puts "\nDIPLOMAT CONFIG:"
+          puts "\nDIPLOMAT CONFIG:\n"
           p Diplomat.configuration
-          puts "\nNew resource:"
-          p new_resource
+          puts "\nNew resource:\n"
+          p new_resource.to_acl[
           old_acl = Diplomat::Acl.info(new_resource.to_acl['ID'], nil, :return)
           return false if old_acl.nil? || old_acl.empty?
           old_acl.first.select! { |k, _v| %w(ID Type Name Rules).include?(k) }
