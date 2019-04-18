@@ -97,6 +97,8 @@ module ConsulCookbook
           p new_resource.to_acl
           puts
           p new_resource.to_acl['ID']
+          p Diplomat::Acl.info(new_resource.to_acl['ID'], {}, :return) 
+          p Diplomat::Acl.info(new_resource.to_acl['ID'], nil, :return) 
           old_acl = Diplomat::Acl.info(new_resource.to_acl['ID'], nil, :return)
           return false if old_acl.nil? || old_acl.empty?
           old_acl.first.select! { |k, _v| %w(ID Type Name Rules).include?(k) }
